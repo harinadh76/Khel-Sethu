@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Khel sethu</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+
+    <link rel="icon" href="images/logo.png" type="image/icon type" />
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js"
+    integrity="sha512-2bMhOkE/ACz21dJT8zBOMgMecNxx0d37NND803ExktKiKdSzdwn+L7i9fdccw/3V06gM/DBWKbYmQvKMdAA9Nw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+    <style>
+        body{margin-top:20px;
+            background-image: url("images/bck1.jpeg");
+            background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-position: center;
+      height: auto;
+
+}
+section {
+        padding: 3rem 0 2rem;
+      }
+
+      main {
+        
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center;
+        height: 100vh;
+      }
+
+      a {
+        font-weight: 300;
+        text-decoration: none;
+      }
+
+      li {
+        list-style: none;
+      }
+
+      /*Header starts*/
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+      }
+
+      .container {
+        max-width: 960px;
+        margin: auto;
+        width: 100%;
+      }
+
+      .header-active {
+        background-color: white;
+        transition: 0.4s;
+        height: 80px;
+      }
+
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+      }
+
+      .logo {
+        font-size: 2rem;
+        font-weight: 800;
+        position: relative;
+        top: -10px;
+        color: rgb(63, 2, 63);
+      }
+
+      .navbar {
+        display: flex;
+        align-items: center;
+        column-gap: 1.5rem;
+      }
+
+      .nav-link {
+        font-weight: bold;
+        color: rgb(63, 2, 63);
+
+        font-size: 1rem;
+        padding: 4px 8px;
+        border-radius: 0.2rem;
+      }
+
+      .nav-link:hover {
+        background-color: rgb(63, 2, 63);
+        border: 1px solid rgb(63, 2, 63);
+        color: white;
+        /* color: white;
+        background: rgb(63, 2, 63); */
+        transition: 0.3s all linear;
+      }
+
+      /*Header ends*/
+      /* menu icon starts */
+      .menu-icon {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        row-gap: 5px;
+        cursor: pointer;
+        z-index: 200;
+        transition: 0.3s;
+      }
+
+      .menu-icon div {
+        display: block;
+        background: rgb(63, 2, 63);
+        height: 2px;
+        width: 24px;
+        transition: 0.3s;
+      }
+
+      .move .line1 {
+        transform: rotate(-45deg) translate(-5px, 5px);
+      }
+
+      .move .line2 {
+        opacity: 0;
+      }
+
+      .move .line3 {
+        transform: rotate(45deg) translate(-5px, -5px);
+      }
+
+     
+
+      
+
+      /* menu-icon ends */
+
+.team-style1 {
+    position: relative;
+}
+
+.team-style1 .team-img {
+    position: relative;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.09);
+    text-align: center;
+    
+}
+.team-style1 .team-img img {
+    display: inline-block;
+    width: -webkit-fill-available;
+    height: auto;
+
+}
+.team-style1 .team-social-icon {
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    width: auto;
+    display: block;
+    transition: all 0.3s ease-in-out;
+    z-index: 9;
+}
+.team-style1 .team-social-icon ul {
+    list-style: none;
+    padding: 0;
+    transition: all 0.3s ease-in-out;
+    margin: 20px;
+}
+.team-style1 .team-social-icon ul li {
+    margin-bottom: 8px;
+}
+.team-style1 .team-social-icon ul li:last-child {
+    margin-bottom: 0;
+}
+.team-style1 .team-social-icon ul li a {
+    background-color: #fff;
+    color: purple;
+    font-size: 15px;
+    display: inline-block;
+    height: 36px;
+    border-radius: 0.25rem;
+    width: 36px;
+    border: 1px solid rgba(0, 73, 118, 0.41);
+    line-height: 36px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease 0s;
+}
+.team-style1 .team-social-icon ul li a:hover {
+    background: purple;
+    color: #fff;
+    border: 1px solid purple;
+}
+.team-style1 .team-info {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 20px;
+    /* background: #00baee; */
+    background-color: #FDFD95;
+    
+    text-align: center;
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+.team-style1 .team-info h6 {
+    display: block;
+    /* color: #fff; */
+    color: purple;
+    text-transform: capitalize;
+}
+.team-style1 .team-info small {
+    display: block;
+    color: purple;
+}
+/*footer*/
+@media (max-width: 990px) {
+        .container {
+          margin: 0 auto;
+          width: 90%;
+        }
+      }
+
+@media screen and (max-width: 991px) {
+    .team-style1 .team-info {
+        padding: 15px;
+    }
+}
+@media screen and (max-width: 575px) {
+    .team-style1 .team-social-icon ul li a {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 13px;
+    }
+}
+@media (max-width: 892px) {
+        section {
+          padding: 2rem 0;
+        }
+
+        .nav {
+          padding: 12px 0;
+        }
+
+        .menu-icon {
+          display: flex;
+        }
+
+        .navbar {
+          position: absolute;
+          top: 0;
+          right: -100%;
+          width: 300px;
+          height: 70vh;
+          background: #fff;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 50px 20px;
+          transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+        .open-menu {
+          right: 0;
+          transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+      }
+
+      @media (max-width: 775px) {
+        #block{
+            margin: 5px;
+        }
+        main {
+          height: -webkit-fill-available;
+        }
+
+        .logo {
+          font-size: 1.1rem;
+          top: 0px;
+        }
+
+        .menu-icon {
+          display: flex;
+        }
+
+        .navbar {
+          position: absolute;
+          top: 0;
+          right: -100%;
+          width: 300px;
+          height: 70vh;
+          background: #fff;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 50px 20px;
+          transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+        .open-menu {
+          right: 0;
+          transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+        .nav-link {
+          display: block;
+          margin: 1rem 0;
+        }
+    }
+/*footer*/
+.footer-basic {
+        padding:40px 0;
+        background-color:#262525;
+        color:white;
+      }
+      
+      .footer-basic ul {
+        padding:0;
+        list-style:none;
+        text-align:center;
+        font-size:18px;
+        line-height:1.6;
+        margin-bottom:0;
+      }
+      
+      .footer-basic li {
+        padding:0 10px;
+      }
+      
+      .footer-basic ul a {
+        color:inherit;
+        text-decoration:none;
+        opacity:0.8;
+      }
+      
+      .footer-basic ul a:hover {
+        opacity:1;
+      }
+      
+      .footer-basic .social {
+        text-align:center;
+        padding-bottom:25px;
+      }
+      
+      .footer-basic .social > a {
+        font-size:24px;
+        width:40px;
+        height:40px;
+        line-height:40px;
+        display:inline-block;
+        text-align:center;
+        border-radius:50%;
+        border:1px solid #ccc;
+        margin:0 8px;
+        color:inherit;
+        opacity:0.75;
+      }
+      
+      .footer-basic .social > a:hover {
+        opacity:0.9;
+      }
+      
+      .footer-basic .copyright {
+        margin-top:15px;
+        text-align:center;
+        font-size:13px;
+        color:#aaa;
+        margin-bottom:0;
+      }
+      /*footer ended*/
+
+
+    </style>
+  </head>
+  <body>
+     <!--header starts-->
+     <main>
+        <header class="header-active">
+          <a href="/" class="scroll-top">
+            <i class="bx bx-up-arrow-alt"></i>
+          </a>
+  
+          <div class="nav container">
+            <a class="logo" href="/"><img src="/images/logo.png" height="60px" width="60px"> Khel Sethu</a>
+            <ul class="navbar">
+              <li><a href="/" class="nav-link">Home</a></li>
+  
+              <li><a href="/#events" class="nav-link">Events</a></li>
+              <li><a href="/about" class="nav-link">Our Team</a></li>
+              <li>
+                <a href="/contactUs" target="_blank" class="nav-link"
+                  >Contact-Us</a
+                >
+              </li>
+              <% var Currentuser=JSON.parse(localStorage.getItem("users")) %> <%
+              if(Currentuser==null) { %>
+              <li><a href="/loginUser" class="nav-link">Login</a></li>
+              <li><a href="/registerUser" class="nav-link">Sign-Up</a></li>
+              <% } %> <% if(Currentuser!=null) { %>
+              <li><a href="/logout" class="nav-link">Logout</a></li>
+              <li>
+                <a href="#" class="nav-link"
+                  ><%= Currentuser.username %></a
+                >
+              </li>
+              <% } %>
+            </ul>
+            <div class="menu-icon">
+              <div class="line1"></div>
+              <div class="line2"></div>
+              <div class="line3"></div>
+            </div>
+          </div>
+        </header>
+        <!--header ends-->
+  
+    <section>
+        <div class="container">
+            <div class="text-center mb-5"><br>
+                
+                <h2 class="display-20 display-md-18 display-lg-16" style="color:purple; ">Meet Our Individuals</h2>
+            </div>
+    
+            <div class="row">
+                <div class="col-sm-6 col-lg-4 mb-1-9 mb-lg-0" id="block">
+                    <div class="team-style1 hoverstyle1">
+                        <div class="team-img">
+                            <img src="/images/developer1.jpg" alt="" width="200px" height="300px">
+                        </div>
+                        <div class="team-social-icon">
+                            <ul>
+
+                                  
+                                <li><a href="https://www.linkedin.com/in/prem-kumar-naidu-tadi-b47179237/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="team-info">
+                            <h6 class="h5">Prem Kumar Naidu Tadi</h6>
+                            <small>Full Stack Developer</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 mb-1-9 mb-lg-0"  id="block">
+                    <div class="team-style1 hoverstyle1">
+                        <div class="team-img">
+                            <img src="/images/developer2.jpg" alt="" width="200px" height="500px">
+                        </div>
+                        <div class="team-social-icon">
+                            <ul>
+                               
+                                  
+                                <li><a href="https://www.linkedin.com/in/harinadh-tanna-45b392211/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="team-info">
+                            <h6 class="h5">Harinadh Tanna</h6>
+                            <small>Full Stack Developer</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="team-style1 hoverstyle1"  id="block">
+                        <div class="team-img">
+                        <img src="/images/developer3.jpg" alt="" width="200px" height="500px">
+                        </div>
+                        <div class="team-social-icon">
+                            <ul>
+                               
+                                  
+                                <li><a href="https://www.linkedin.com/in/sree-vani-ramisetti-7b0579208/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="team-info">
+                            <h6 class="h5">Sree Vani Ramisetti</h6>
+                            <small>Full Stack Developer</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+     <!--footer started-->
+     <div class="footer-basic">
+        <footer>
+            <div class="social"><a href="https://www.instagram.com/prem._.pkk/"><i class="fa-brands fa-instagram"></i></i></a><a href="https://www.snapchat.com/prempk.7172"><i class="fa-brands fa-square-snapchat"></i></i></a><a href="https://twitter.com/Prempk2929"><i class="fa-brands fa-twitter"></i></i></a><a href="https://www.facebook.com/profile.php?id=100090794153191"><i class="fa-brands fa-facebook"></i></i></a></div>
+          <hr style="height:2px;border-width:0;color:gray;background-color:white">
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Home</a></li>
+                <li class="list-inline-item"><a href="/checkevents">Events</a></li>
+                <li class="list-inline-item"><a href="/about">Our Team</a></li>
+                <li class="list-inline-item"><a href="/contactUs" target="_blank">Contact-Us</a></li>
+                
+            </ul>
+            <p class="copyright"> © Khel Sethu </p>
+        </footer>
+    </div>
+    <!--footer ended-->
+    
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

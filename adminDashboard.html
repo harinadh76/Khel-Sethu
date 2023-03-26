@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="tsp.jpg">
+    <title>AdminBoard</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sacramento&family=Ubuntu:wght@300&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            background-image: linear-gradient(to right,#7F8C8D,#000000);
+            place-items: center;
+            min-height: 100vh;
+            background-color: black;
+            font-family: 'Sacramento', cursive;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        textarea {
+            margin-top: -23px;
+            font-family: 'Sacramento', cursive;
+            font-family: 'Ubuntu', sans-serif;
+            font-weight: 900;
+            background-color: #bababa;
+            background-image: -moz-linear-gradient(top, #bababa 0%, #f9fbfc 100%);
+            background-image: -webkit-linear-gradient(top, #bababa 0%, #f9fbfc 100%);
+            background-image: -o-linear-gradient(top, #bababa 0%, #f9fbfc 100%);
+            background-image: -ms-linear-gradient(top, #bababa 0%, #f9fbfc 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9fbfc', endColorstr='#f9fbfc', GradientType=0);
+            background-image: linear-gradient(top, #bababa 0%, #f9fbfc 100%);
+            -webkit-box-shadow: 0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+            -moz-box-shadow: 0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+            box-shadow: 0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+        }
+
+        select.values {
+            margin-left: -1px;
+            height: 33px;
+            margin-top: -19px;
+            width: 485px;
+            border-radius: 10px;
+            background-color: #bababa;
+            background-image: -moz-linear-gradient(top, #bababa 0%, #f9fbfc 100%);
+            background-image: -webkit-linear-gradient(top, #bababa 0%, #f9fbfc 100%);
+            background-image: -o-linear-gradient(top, #bababa 0%, #f9fbfc 100%);
+            background-image: -ms-linear-gradient(top, #bababa 0%, #f9fbfc 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9fbfc', endColorstr='#f9fbfc', GradientType=0);
+            background-image: linear-gradient(top, #bababa 0%, #f9fbfc 100%);
+            -webkit-box-shadow: 0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+            -moz-box-shadow: 0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+            box-shadow: 0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+        }
+
+        button {
+            text-decoration: none;
+            width: 485px;
+            text-align: center;
+            padding: 11px 32px;
+            border: solid 1px #004F72;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 10px;
+            font: 17px Georgia, "Times New Roman", Times, serif;
+            font-weight: bold;
+            color: #010d0d;
+            background-color: #bababa;
+            background-image: -moz-linear-gradient(top, #bababa 0%, #f9fbfc 100%);
+            background-image: -webkit-linear-gradient(top, #bababa 0%, #f9fbfc 100%);
+            background-image: -o-linear-gradient(top, #bababa 0%, #f9fbfc 100%);
+            background-image: -ms-linear-gradient(top, #bababa 0%, #f9fbfc 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9fbfc', endColorstr='#f9fbfc', GradientType=0);
+            background-image: linear-gradient(top, #bababa 0%, #f9fbfc 100%);
+            -webkit-box-shadow: 0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+            -moz-box-shadow: 0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+            box-shadow: 0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 10px;
+            text-align: left;
+            margin-left: 27px;
+        }
+
+        .container {
+            height: 235px;
+            width: 525px;
+            border-radius: 10px;
+            background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+            text-align: center;
+        }
+
+        .one {
+            display: flex;
+            flex-direction: column;
+            padding-left: 2px;
+        }
+
+        .prem {
+
+            height: 120px;
+            width: 481px;
+            margin-left: 30px;
+            border-radius: 10px;
+            font-size: 1rem;
+            line-height: 2;
+
+        }
+
+        .select {
+            margin-top: -49px;
+            margin-left: 29px;
+        }
+        @media (max-width:480px)
+        {
+           body 
+           {
+            background-image: linear-gradient(to right,#34e89e,#0f3443);
+           }
+           .container 
+           {
+            background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+            width: 350px;
+
+           }
+           .prem 
+           {
+            width: 300px;
+            margin-left:20px ;
+           }
+           select.values 
+           {
+              width: 300px;
+           }
+           button
+           {
+            width: 300px;
+            
+           }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome To Admin Board</h1>
+            
+            <button style="margin-bottom: 8px;" onClick="window.location.href='/addEvent'">Create a new Event</button>
+            <button style="margin-bottom: 8px;" onClick="window.location.href='/viewevents'">View all Events</button>
+            <button style="margin-bottom: 8px;" onClick="window.location.href='/viewRegistrations'">View all Registrations</button>
+           
+        </form>
+    </div>
+    
+</body>
+
+</html>

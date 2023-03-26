@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Khel Sethu-Contact</title>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js"
+        integrity="sha512-2bMhOkE/ACz21dJT8zBOMgMecNxx0d37NND803ExktKiKdSzdwn+L7i9fdccw/3V06gM/DBWKbYmQvKMdAA9Nw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link rel="icon" href="images/logo.png" type="image/icon type" />
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Poppins");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: purple;
+        }
+
+        section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+
+            background-color: #FDFD95;
+        }
+
+        .container {
+            position: relative;
+            min-width: 1100px;
+            min-height: 550px;
+            display: flex;
+            z-index: 1000;
+            background-color: white;
+        }
+
+        .container .contactInfo {
+            position: absolute;
+            top: 40px;
+            width: 350px;
+            height: -moz-calc(100% - (80px));
+            height: -webkit-calc(100% - (80px));
+            height: calc(100% - (80px));
+            background-color: purple;
+            z-index: 1;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 20px 25px rbga(0, 0, 0, 0.15);
+        }
+
+        .container .contactInfo h2 {
+            color: white;
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        .container .contactInfo ul.info {
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .container .contactInfo ul.info li {
+            position: relative;
+            list-style: none;
+            display: flex;
+            margin: 20px 0;
+            cursor: pointer;
+            align-items: flex-start;
+        }
+
+        .container .contactInfo ul.info li span:nth-child(1) {
+            width: 30px;
+            min-width: 30px;
+            padding: 20px;
+        }
+
+        .container .contactInfo ul.info li span:nth-child(1) i {
+            max-width: 100%;
+            filter: invert(1);
+
+        }
+
+        .container .contactInfo ul.info li span:nth-child(2) {
+            color: white;
+            margin-left: 10px;
+            font-weight: 300;
+            padding: 20px;
+        }
+
+        .container .contactInfo ul.info {
+            color: white;
+        }
+
+        .container .contactInfo ul.sci {
+            position: relative;
+            display: flex;
+            color: white;
+        }
+
+        .container .contactInfo ul.sci svg {
+            color: white;
+            padding: 20px;
+        }
+
+        .container .contactInfo ul.sci li {
+            list-style: none;
+            margin-right: 15px;
+        }
+
+        .container .contactInfo ul.sci li a {
+            text-decoration: none;
+        }
+
+        .container .contactInfo ul.sci li a i {
+            filter: invert(1);
+        }
+        .container .contactForm {
+            position: absolute;
+            padding: 70px 50px;
+            padding-left: 250px;
+            margin-left: 150px;
+            width: -moz-calc(100% - (150px));
+            width: -webkit-calc(100% - (150px));
+            width: calc(100% - (150px));
+            height: 100%;
+            background-color: white;
+            box-shadow: 0 50px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        .container .contactForm h2 {
+            color: rgb(63, 2, 63);
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        .container .contactForm .formBox {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding-top: 30px;
+        }
+
+        .container .contactForm .formBox .inputBox {
+            position: relative;
+            margin-bottom: 35px;
+        }
+
+        .container .contactForm .formBox .inputBox .w50 {
+            width: 47%;
+        }
+
+        .container .contactForm .formBox .inputBox .w100 {
+            width: 100%;
+        }
+
+        .container .contactForm .formBox .inputBox input,
+        .container .contactForm .formBox .inputBox textarea {
+            width: 100%;
+            resize: none;
+            padding: 5px 0;
+            font-size: 18px;
+            font-weight: 300;
+            color: #333;
+            border: none;
+            outline: none;
+            border-bottom: 1px solid #777;
+        }
+
+        .container .contactForm .formBox .inputBox textarea {
+            height: 120px;
+        }
+
+        .container .contactForm .formBox .inputBox span {
+            position: absolute;
+            left: 0;
+            padding: 5px 0;
+            font-size: 18px;
+            font-weight: 300;
+            color: #333;
+            pointer-events: none;
+            transition: 0.5s;
+        }
+
+        .container .contactForm .formBox .inputBox input:focus~span,
+        .container .contactForm .formBox .inputBox input:valid~span,
+        .container .contactForm .formBox .inputBox textarea:focus~span,
+        .container .contactForm .formBox .inputBox textarea:valid~span {
+            transform: translateY(-20px);
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: rgb(63, 2, 63);
+            font-weight: 500;
+        }
+
+        .container .contactForm .formBox .inputBox input[type="submit"] {
+            position: relative;
+            width: 220px;
+            max-width: 220px;
+            background-color: purple;
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 12px;
+            border-radius: 5px;
+            margin-top: 40px;
+        }
+        .container .contactForm .formBox .inputBox input[type="submit"]:hover {
+            background-color: purple;
+        }
+
+        /* responsive */
+        @media (max-width:1200px) {
+            .container {
+                width: 90%;
+                min-width: auto;
+                margin: 20px;
+                box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            }
+
+            .contactInfo {
+                top: 0;
+                height: 550px;
+                position: relative;
+                box-shadow: none;
+            }
+
+            .container .contactForm {
+                position: relative;
+                width: -moz-calc(100% - (350px));
+                width: -webkit-calc(100% - (350px));
+                width: calc(100% - (350px));
+                padding-left: 0;
+                margin-left: 350px;
+                padding: 40px;
+                height: 550px;
+                box-shadow: none;
+
+            }
+        }
+
+        @media (max-width:991px) {
+            section {
+                background-color: #91e0ff;
+            }
+
+            section::before {
+                display: none;
+            }
+
+            .container {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+
+            .container .contactForm {
+                width: 100%;
+                height: auto;
+                margin-left: 0%;
+            }
+
+            .container .contactInfo {
+                width: 100%;
+                height: auto;
+                position: initial;
+                flex-direction: row;
+            }
+
+            .container .contactInfo ul.sci {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+        }
+
+        @media (max-width:600px) {
+            .container .contactForm {
+                padding: 25px;
+            }
+
+            .container .contactInfo {
+                padding: 25px;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .container .contactInfo ul.sci {
+                margin-top: 40px;
+            }
+
+            .container .contactForm .formBox .inputBox .w50 {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <div class="contactInfo">
+                <div>
+                    <h2>Contact Info</h2>
+                    <ul class="info">
+                        <li>
+                            <span><i class="fa fa fa-location-dot"></i></span>
+                            <span>
+                                CSE Vignan Institute <br />
+                                Duvvada, Visakhapatnam<br />
+                                530032
+                            </span>
+                        </li>
+                        <li>
+                            <span><i class="fa fa fa-envelopes-bulk"></i></span>
+                            <span> viitduvvada@gmail.com </span>
+                        </li>
+                        <li>
+                            <span><i class="fa-solid fa-phone-volume"></i></span>
+                            <span> 9177205289 </span>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="sci">
+                    <li>
+                        <a href="https://www.facebook.com/profile.php?id=100090794153191"><i class="fab fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/Prempk2929"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/prem._.pkk/"><i class="fab fa-instagram"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <form action="">
+                <div class="contactForm">
+                    <h2>Send a message</h2>
+                    <div class="formBox">
+                        <div class="inputBox w50">
+                            <input type="text" class="name" required />
+                            <span>First Name</span>
+                        </div>
+                        <div class="inputBox w50">
+                            <input type="text" required />
+                            <span>Last Name</span>
+                        </div>
+                        <div class="inputBox w50">
+                            <input type="email" class="email" required />
+                            <span>Email Address</span>
+                        </div>
+                        <div class="inputBox w50">
+                            <input type="text" required />
+                            <span>Mobile Number</span>
+                        </div>
+                        <div class="inputBox w100">
+                            <textarea required class="message"></textarea>
+                            <span>Write your message here.....</span>
+                        </div>
+                        <div class="inputBox w100">
+                            <% var Currentuser=JSON.parse(localStorage.getItem("users")) %> <%
+                            if(Currentuser!=null) { %>
+                               <input type="submit" value="Send" class="send-btn" />
+                              <% } %>
+                              <% if(Currentuser==null) { %>
+                                <input type="submit" value="Send" onclick="alert('Please Login to send message')" />
+                            <% } %> 
+                        </div>
+                    </div>
+            </form>
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+            <script type="text/javascript">
+            (function() {
+                emailjs.init('t_qh85c_gS50ZMM08');
+            })();
+    </script>
+    <script src="js/script.js"></script>
+
+        </div>
+        </div>
+        </div>
+    </section>
+</body>
+
+</html>
