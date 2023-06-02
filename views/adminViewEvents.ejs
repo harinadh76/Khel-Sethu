@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Updated events</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+        <link rel="icon" href="images/logo.png" type="image/icon type" />
+    <style>
+      
+        #events {
+            padding: 8vw 8vw 0 8vw;
+            text-align: center;
+        }
+
+        #events .events-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-gap: 1rem;
+            margin-top: 50px;
+        }
+
+        #events .events {
+            text-align: start;
+            background-color: #f9f9ff;
+            height: fit-content;
+            position: relative;
+        }
+
+        #events .events img {
+            width: 100%;
+            height: 60%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        #events .events .details {
+            padding: 15px 15px 0 15px;
+            /* margin-bottom: 80px; */
+        }
+
+        #events .events .cost {
+            /* background-color: rgb(74,74,136); */
+            background-color: rgb(63, 2, 63);
+            color: #fff;
+            line-height: 70px;
+            width: 70px;
+            height: 70px;
+            text-align: center;
+            border-radius: 50%;
+            position: absolute;
+            right: 15px;
+            bottom: 125px;
+        }
+
+        .regbtn {
+            border-radius: 7px;
+            background-color: rgb(63, 2, 63);
+            color: #fff;
+            margin-top: 30px;
+            height: 45px;
+            width: 130px;
+            margin: 20px;
+        }
+
+        
+
+        .regbtn:hover
+         {
+            background-color: purple;
+        }
+        .formact{
+          display: flex;
+          
+        }
+        /* .formact input{
+          background-color:rgb(63, 2, 63);
+          border: none;
+          color: #fff;
+          font-size: 20px;
+          
+        } */
+        h4{
+          font-size: 20px;
+        }
+
+
+        
+    </style>
+</head>
+
+<body>
+    <section id="events">
+      
+        <div class="events-box">
+          <% for(var i=0;i<event.length;i++) { %>
+            <div class="events">
+                <img src="<%= event[i].photo%>" />
+                <div class="details" style="line-height: 2;">
+                    
+                    <h4 style="margin-bottom: 13px;">Name:<%= event[i].name %></h4>
+                    <h4 style="margin-bottom: 13px;">Description:<%= event[i].description %></h4>
+                    <h4 style="margin-bottom: 13px;">Time:<%= event[i].time %></h4>
+                    <h4 style="margin-bottom: 13px;">Mode:<%= event[i].mode %></h4>
+                    <h4 style="margin-bottom: 13px;">DateStarted:<%= event[i].dateStart %></h4>
+                    <h4 style="margin-bottom: 13px;">DateEnd:<%= event[i].dateEnd %></h4>
+                    <h4 style="margin-bottom: 13px;">Category:<%= event[i].category %></h4>
+                    <h4 style="margin-bottom: 13px;">RegisterationFee:<%= event[i].registerationFee %></h4>
+                    <h4 style="margin-bottom: 13px;">Cashprize:<%= event[i].cashPrice %></h4>
+                    <h4 style="margin-bottom: 13px;">Contact No:<%= event[i].contact %></h4>
+
+
+                    <center>
+                       <div class="formact">
+                        <form action='/updateEvent/<%=event[i]._id%>' method="POST" >
+                           <input type="submit" value="Update" class="regbtn">
+                        </form>
+                        <form action='/deleteEvents/<%=event[i]._id%>' method="POST" >
+                          <input type="submit" value="Delete" class="regbtn">
+                        </form> 
+                        </div>
+                    </center>
+
+                    
+                </div>
+                
+            </div>
+            <% } %>
+            </div>
+
+
+
+            
+
+
+            
+    </section>
+</body>
+
+</html>

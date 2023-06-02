@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Khel Sethu-Events</title>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+  <link rel="icon" href="images/logo.png" type="image/icon type" />
+  <style>
+    @import url("https://fonts.googleapis.com/css?family=Poppins");
+
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-image: url("/images/bck1.jpeg");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-position: center;
+      /* display: flex; */
+      justify-content: center;
+      align-items: center;
+      max-width: -webkit-fill-available;
+      height: max-content;
+      min-height: 100vh;
+    }
+
+    a {
+      font-weight: 300;
+      text-decoration: none;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    /*Header starts*/
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: auto;
+      width: 100%;
+    }
+
+    .header-active {
+      background-color: white;
+      transition: 0.4s;
+      height: 80px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 800;
+      position: relative;
+      top: -10px;
+      color: rgb(63, 2, 63);
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      column-gap: 1.5rem;
+    }
+
+    .nav-link {
+      font-weight: bold;
+      color: rgb(63, 2, 63);
+      font-size: 1rem;
+      padding: 4px 8px;
+      border-radius: 0.2rem;
+    }
+
+    .nav-link:hover {
+      background-color: rgb(63, 2, 63);
+      border: 1px solid rgb(63, 2, 63);
+      color: white;
+      transition: 0.3s all linear;
+    }
+
+    /*Header ends*/
+    /* menu icon starts */
+
+    .menu-icon {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      row-gap: 5px;
+      cursor: pointer;
+      z-index: 200;
+      transition: 0.3s;
+    }
+
+    .menu-icon div {
+      display: block;
+      background: rgb(63, 2, 63);
+      height: 2px;
+      width: 24px;
+      transition: 0.3s;
+    }
+
+    .move .line1 {
+      transform: rotate(-45deg) translate(-5px, 5px);
+    }
+
+    .move .line2 {
+      opacity: 0;
+    }
+
+    .move .line3 {
+      transform: rotate(45deg) translate(-5px, -5px);
+    }
+
+    /* menu-icon ends */
+
+    .full {
+      background-color: #fff;
+      width: 75%;
+      margin: auto;
+    }
+
+    .outoutsp {
+      margin-top: 95px;
+      background-color: #fff;
+      margin-left: 10%;
+      width: 75%;
+      height: 325px;
+    }
+
+    .outsp {
+      display: grid;
+      grid-template-columns: auto 1fr;
+    }
+
+    .outsp .left img {
+      width: 228px;
+      height: 295px;
+      padding: 50px 2px 50px 10px;
+    }
+
+    .right {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-left: 20%;
+      margin-top: 50px;
+    }
+
+    .right span {
+      padding: 10px;
+    }
+
+    .form {
+      margin-top: 20px;
+    }
+
+    .subbtn {
+      width: 120px;
+      justify-content: center;
+      position: relative;
+      left: 0%;
+      padding: 6px;
+      border-radius: 10px;
+      background-color: rgb(63, 2, 63);
+      color: #fff;
+    }
+
+    .subbtn:hover {
+      background-color: purple;
+    }
+
+    .form input {
+      padding: 20px;
+      height: 25px;
+      margin: 15px;
+      border-radius: 7px;
+    }
+
+    @media (max-width: 990px) {
+      .container {
+        margin: 0 auto;
+        width: 90%;
+      }
+    }
+
+    @media (max-width: 892px) {
+      section {
+        padding: 2rem 0;
+      }
+
+      .nav {
+        padding: 12px 0;
+      }
+
+      .menu-icon {
+        display: flex;
+      }
+
+      .navbar {
+        position: absolute;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        height: 70vh;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 20px;
+        transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+
+      .open-menu {
+        right: 0;
+        transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+
+      .full {
+        margin: 20px auto;
+      }
+    }
+
+    @media (max-width: 775px) {
+      main {
+        height: -webkit-fill-available;
+      }
+
+      .logo {
+        font-size: 1.1rem;
+        top: 0px;
+      }
+
+      .menu-icon {
+        display: flex;
+      }
+
+      .navbar {
+        position: absolute;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        height: 70vh;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 20px;
+        transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+
+      .open-menu {
+        right: 0;
+        transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+
+      .nav-link {
+        display: block;
+        margin: 1rem 0;
+      }
+
+      .full {
+        margin: 120px auto;
+      }
+    }
+
+    @media (max-width:775px) {
+      .outoutsp {
+        height: auto;
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 30px;
+      }
+
+      .outsp .left {
+        height: max-content;
+      }
+
+      .outsp {
+        grid-template-columns: 1fr;
+      }
+
+      .outsp .left img {
+        width: 95%;
+        height: 50%;
+        padding: 20px 0px 0px 17px;
+      }
+
+      .right {
+        margin-left: 0%;
+        margin-top: auto;
+      }
+
+      .outsp .right p {
+        padding: 5px 50px 50px 50px;
+        line-height: 3.2rem;
+      }
+
+      .form {
+        margin-top: 20px;
+      }
+
+      .form input {
+        width: -webkit-fill-available;
+      }
+
+      .full {
+        width: 90%;
+        margin: 120px auto;
+      }
+
+      .qr {
+        width: -webkit-fill-available;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <main>
+    <header class="header-active">
+      <a href="/" class="scroll-top">
+        <i class="bx bx-up-arrow-alt"></i>
+      </a>
+
+      <div class="nav container">
+        <a class="logo" href="#"><img src="/images/logo.png" height="60px" width="60px"> Khel Sethu</a>
+        <ul class="navbar">
+          <li><a href="/" class="nav-link">Home</a></li>
+
+          <li><a href="/checkevents" class="nav-link">Events</a></li>
+          <li><a href="/about" class="nav-link">Our Team</a></li>
+          <li>
+            <a href="/contactUs" target="_blank" class="nav-link">Contact-Us</a>
+          </li>
+          <% var Currentuser=JSON.parse(localStorage.getItem(main)) %>
+            <% if(Currentuser==null) { %>
+              <li><a href="/loginUser" class="nav-link">Login</a></li>
+              <li><a href="/registerUser" class="nav-link">Sign-Up</a></li>
+              <% } %>
+                <% if(Currentuser!=null) { %>
+                  <li><a href="/logout" class="nav-link">Logout</a></li>
+                  <li>
+                    <a href="/" class="nav-link">
+                      <%= Currentuser.username %>
+                    </a>
+                  </li>
+                  <% } %>
+        </ul>
+        <div class="menu-icon">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </div>
+    </header>
+    <!--header ends-->
+
+    <div class="full">
+      <div class="outoutsp">
+
+        <div class="outsp">
+          <div class="left">
+            <img src="<%=event.photo%>">
+          </div>
+          <div class="right">
+            <span>Date: <%=event.dateStart.toLocaleDateString()%></span>
+            <span>Name: <%=event.name%></span>
+            <span>Time: <%=event.time%></span>
+            <span>Mode: <%=event.mode%></span>
+            <span>Venue: <%=event.venue%></span>
+            <span>Registration Fee: <%=event.registerationFee%></span>
+            <span>Cash Prize: <%=event.cashPrice%></span>
+            <span>Cash Prize: <%=event.contact%></span>
+          </div>
+
+        </div>
+      </div>
+      <div class="form">
+        <center>
+          <h3>Register By Submitting The Form</h3><br>
+          <form action="/testing" method="POST">
+            <input type="text" placeholder="Name" name="name" required><br>
+            <input type="email" placeholder="Email" name="email" required><br>
+            <input type="number" placeholder="Mobile No" name="mobile" required><br>
+            <input type="text" placeholder="Event Name" name="events" required><br>
+            <input type="number" placeholder="Amount" name="amount" required> <br>
+            <input type="text" placeholder="Enter Transaction Id" name="transactionid" required> <br><br>
+            <label for="Year Of Study">Year Of Study</label>
+            <select name="yos" id="yos" placeholder="Year Of Study">
+              <option value="I">I</option>
+              <option value="II">II</option>
+              <option value="III">III</option>
+              <option value="IV">IV</option>
+
+            </select>
+            <br><br>
+
+            <img src="/images/qr.jpg" alt="Qrcode" height="300px" width="300px" class="qr" download>
+            <br>
+            <br>
+            <button type="submit" class="subbtn">Submit</button>
+
+
+
+          </form>
+        </center><br><br>
+      </div>
+    </div>
+    <br><br>
+    <script src="/js/index.js"></script>
+</body>
+
+</html>

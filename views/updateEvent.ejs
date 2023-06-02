@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" href="images/logo.png" type="image/icon type" />
+    <style>
+        body{
+            background-image: linear-gradient(to right,#7F8C8D,#000000);
+        }
+      input{
+        margin: 10px;
+    display: grid;
+    width: -webkit-fill-available;
+    justify-content: center;
+    position: relative;
+    left: 0%;
+    padding: 6px;
+    border-radius: 10px;
+}
+    button{
+        width: -webkit-fill-available;
+    justify-content: center;
+    position: relative;
+    left: 0%;
+    padding: 6px;
+    border-radius: 10px;
+    background-color: #555555;
+    color: #fff;
+    }
+    button:hover{
+        background-color: #7F8C8D;
+    }
+     
+    </style>
+</head>
+<body>
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+              <div class="card" style="border-radius: 15px;margin: 10px; background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));">
+                <div class="card-body p-5">
+    <h1>Update Events</h1>
+   
+   
+    
+       
+            <!-- <h1>excecutingggg</h1> -->
+            <form action="/events/<%= data.id%>" method="post">
+                <!-- <input type="text"> -->
+
+                <!-- <input type="text" name="id" value="<%= data.id%>" > -->
+                <input type="text" name="name" value="<%= data.name%>" ><br>
+                <input type="text" name="description" value="<%= data.description%>" ><br>
+                <input type="text" name="photo" value="<%= data.photo%>" ><br>
+                <input type="text" name="time" value="<%= data.time%>" ><br>
+                <input type="text" name="mode" value="<%= data.mode%>" ><br>
+                <input type="date" name="dateStart" value="<%= data.dateStart%>" ><br>
+                <input type="date" name="dateEnd" value="<%= data.dateEnd%>" ><br>
+                <input type="text" name="venue" value="<%= data.venue%>" ><br>
+                <input type="text" name="registerationFee" value="<%= data.registerationFee%>" ><br>
+                <input type="text" name="cashPrice" value="<%= data.cashPrice%>" ><br>
+                <input type="text" name="contact" value="<%= data.contact%>" ><br>
+
+                <button>Update</button> 
+            </form>
+        </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+           
+
+    
+    
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td,
+    th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+
+    .container {
+      width: 1000px;
+      margin: auto;
+      margin-top: 150px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Year</th>
+        <th>Event</th>
+        <th>Amount</th>
+        <th>Transaction ID</th>
+      </tr>
+      <% for(var i=0;i<event.length;i++) { %>
+        <tr>
+          <td>
+            <%= event[i].name%>
+          </td>
+          <td>
+            <%= event[i].email%>
+          </td>
+          <td>
+            <%= event[i].phnumber%>
+          </td>
+          <td>
+            <%= event[i].year%>
+          </td>
+          <td>
+            <%= event[i].event%>
+          </td>
+          <td>
+            <%= event[i].amount%>
+          </td>
+          <td>
+            <%= event[i].transactionid%>
+          </td>
+        </tr>
+        <% } %>
+
+    </table>
+  </div>
+
+</body>
+
+</html>
