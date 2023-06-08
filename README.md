@@ -21,7 +21,7 @@ The project simplifies the management of sports events by providing a centralize
 
 ## Installation
 
-Install Finder Desk
+Run Project
 
 ```bash
   git clone https://github.com/harinadh76/Khel-Sethu.git
