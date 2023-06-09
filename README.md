@@ -12,7 +12,7 @@ The project simplifies the management of sports events by providing a centralize
 
 ## Deployment Link
 
-[View Deployment](https://khelsethu-q911.onrender.com/)
+[View Deployment](https://khelsethu1.onrender.com)
 
 
 
